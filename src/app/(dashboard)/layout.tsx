@@ -9,7 +9,6 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const sessionUser = await getSession();
-  console.log("🚀 ~ file: layout.tsx:13 ~ sessionUser:", sessionUser);
 
   const currentUser = await getCurrentUser();
 

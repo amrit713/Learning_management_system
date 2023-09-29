@@ -2,8 +2,8 @@ import { withAuth, NextRequestWithAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 export default withAuth(
   function middleware(req: NextRequestWithAuth) {
-    console.log("middleware pathname:", req.nextUrl.pathname);
-    console.log("middleware token:", req.nextauth.token?.role);
+    // console.log("middleware pathname:", req.nextUrl.pathname);
+    // console.log("middleware token:", req.nextauth.token?.role);
 
     if (
       req.nextUrl.pathname.startsWith("/teacher") &&

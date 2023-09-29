@@ -61,7 +61,7 @@ export const RegisterModal = () => {
   const router = useRouter();
   const { isOpen, onClose, onOpen, type } = useModal();
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof fromSchema>>({
     resolver: zodResolver(fromSchema),
     defaultValues: {
       email: "",
