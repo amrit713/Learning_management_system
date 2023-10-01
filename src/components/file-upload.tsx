@@ -1,12 +1,13 @@
+import "@uploadthing/react/styles.css";
+
 import { FileIcon, X } from "lucide-react";
 import Image from "next/image";
-
 import { UploadDropzone } from "@/lib/uploadthing";
 
 interface FileUploadProps {
   onChange: (url?: string) => void;
-  value: string;
-  endpoint: "profileImage" | "courseImage";
+  value?: string;
+  endpoint: "profileImage" | "courseImage" | "courseAttachment";
 }
 
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {

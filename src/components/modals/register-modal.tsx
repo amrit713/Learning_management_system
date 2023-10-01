@@ -178,7 +178,7 @@ export const RegisterModal = () => {
                         <FormControl>
                           <FileUpload
                             endpoint="profileImage"
-                            value={field.value}
+                            value={field.value ? field.value : ""}
                             onChange={field.onChange}
                           />
                         </FormControl>
