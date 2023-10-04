@@ -83,7 +83,7 @@ export const PriceFormCourse = ({
         <p
           className={cn(
             "text-sm mt-22",
-            !initialData.price && "text-zonc-500 italic"
+            !initialData.price && "text-zinc-500 italic"
           )}
         >
           {initialData.price ? formatPrice(initialData.price) : "No price"}

@@ -84,10 +84,10 @@ export const DescriptionFormCourse = ({
         <p
           className={cn(
             "text-sm mt-22",
-            !initialData.description && "text-zonc-500 italic"
+            !initialData.description && "text-zinc-500 italic"
           )}
         >
-          {initialData.description}
+          {initialData.description || "No description"}
         </p>
       )}
       {isEditing && (

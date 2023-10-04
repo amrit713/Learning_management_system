@@ -15,6 +15,7 @@ import { ImageFormCourse } from "@/components/course/image-form-course";
 import { CategoryFormCourse } from "@/components/course/category-form-course";
 import { PriceFormCourse } from "@/components/course/price-form-course";
 import { AttachmentFormCourse } from "@/components/course/attachment-form-course";
+import { ChaptersFormCourse } from "@/components/course/chapters-form-course";
 
 const CourseIdpage = async ({
   params,
@@ -37,6 +38,12 @@ const CourseIdpage = async ({
       userId: user.id,
     },
     include: {
+      chapters: {
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
+
       attachments: {
         orderBy: {
           createdAt: "desc",
@@ -61,6 +68,7 @@ const CourseIdpage = async ({
     course.imageUrl,
     course.price,
     course.categoryId,
+    course.chapters.some((chapter) => chapter.isPublished),
   ];
 
   const totalFields = requiredFields.length;
@@ -104,7 +112,9 @@ const CourseIdpage = async ({
               <IconBadge icon={ListChecks} />
               <h2 className="text-xl">Course chapters</h2>
             </div>
-            <div className="">TODO: Chapters</div>
+            <div className="">
+              <ChaptersFormCourse initialData={course} courseId={course.id} />
+            </div>
           </div>
           <div className="flex items-center gap-x-2">
             <IconBadge icon={CircleDollarSign} />
